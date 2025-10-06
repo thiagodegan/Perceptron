@@ -1,0 +1,78 @@
+{
+  "owner": "thiagodegan",
+  "repo": "Perceptron",
+  "ref": "master",
+  "commit_sha": "086235bfe82ab9432e15642cec13447d3a59ec98",
+  "generated_at": "2025-10-06T22:35:46.006005+00:00",
+  "total_files": 1,
+  "files": [
+    {
+      "path": "perceptron.py",
+      "sha": "5462db690bec28dfa2c63adad7caa9e70c9b4545",
+      "language": "python",
+      "analysis": {
+        "version": "1.0.0",
+        "file": {
+          "path": "perceptron.py",
+          "sha": "5462db690bec28dfa2c63adad7caa9e70c9b4545",
+          "repo": "Perceptron",
+          "owner": "thiagodegan",
+          "size_bytes": 6373
+        },
+        "ref": "master",
+        "language": "python",
+        "detector": {
+          "method": "extension",
+          "confidence": 0.95
+        },
+        "units": [
+          {
+            "kind": "generic",
+            "id": "u_main",
+            "name": "main",
+            "range": {
+              "start_line": 1,
+              "end_line": 144
+            },
+            "signature": {
+              "parameters": [],
+              "returns": null
+            },
+            "purpose": "Falha no LLM: \"Input to ChatPromptTemplate is missing variables {'...'}.  Expected: ['...', 'code'] Received: ['code']\\nNote: if you intended {...} to be part of the string and not a variable, please ",
+            "io": {
+              "inputs": [],
+              "outputs": [],
+              "side_effects": []
+            },
+            "logic": {
+              "steps": [
+                {
+                  "id": "s1",
+                  "text": "Processo principal",
+                  "kind": "action"
+                }
+              ],
+              "decisions": [],
+              "calls": []
+            },
+            "risks": []
+          }
+        ],
+        "summary": {
+          "unit_count": 1,
+          "diagram_suggestion": "flowchart",
+          "notes": "Gerado automaticamente pelo pipeline assíncrono."
+        }
+      },
+      "diagrams": [
+        {
+          "unit_id": "u_main",
+          "unit_name": "main",
+          "type": "flowchart",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Processo principal\"]\nSTART --> s1\ns1 --> END"
+        }
+      ],
+      "diagram_error": null
+    }
+  ]
+}
