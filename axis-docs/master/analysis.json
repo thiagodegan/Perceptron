@@ -2,8 +2,8 @@
   "owner": "thiagodegan",
   "repo": "Perceptron",
   "ref": "master",
-  "commit_sha": "086235bfe82ab9432e15642cec13447d3a59ec98",
-  "generated_at": "2025-10-06T22:35:46.006005+00:00",
+  "commit_sha": "a5084c78432ca1ba0d25a966086b2f8142265010",
+  "generated_at": "2025-11-07T19:27:05.167577+00:00",
   "total_files": 1,
   "files": [
     {
@@ -28,17 +28,17 @@
         "units": [
           {
             "kind": "generic",
-            "id": "u_main",
-            "name": "main",
+            "id": "s1",
+            "name": "__init__",
             "range": {
-              "start_line": 1,
-              "end_line": 144
+              "start_line": 7,
+              "end_line": 12
             },
             "signature": {
               "parameters": [],
               "returns": null
             },
-            "purpose": "Falha no LLM: \"Input to ChatPromptTemplate is missing variables {'...'}.  Expected: ['...', 'code'] Received: ['code']\\nNote: if you intended {...} to be part of the string and not a variable, please ",
+            "purpose": "Initialize the perceptron and its parameters.",
             "io": {
               "inputs": [],
               "outputs": [],
@@ -48,28 +48,410 @@
               "steps": [
                 {
                   "id": "s1",
-                  "text": "Processo principal",
+                  "text": "Set learning rate and initialize perceptron structure.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s2",
+                  "text": "Change working directory and set file paths.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s3",
+                  "text": "Build and train the neural network.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s4",
+                  "text": "Continuously accept input for prediction.",
+                  "kind": "action"
+                }
+              ],
+              "decisions": [],
+              "calls": [
+                {
+                  "target": "self.build()",
+                  "kind": "other"
+                },
+                {
+                  "target": "self.train()",
+                  "kind": "other"
+                },
+                {
+                  "target": "input()",
+                  "kind": "other"
+                }
+              ]
+            },
+            "risks": [],
+            "diagram_suggestion": "none"
+          },
+          {
+            "kind": "generic",
+            "id": "s2",
+            "name": "build",
+            "range": {
+              "start_line": 14,
+              "end_line": 30
+            },
+            "signature": {
+              "parameters": [],
+              "returns": null
+            },
+            "purpose": "Construct the neural network structure.",
+            "io": {
+              "inputs": [],
+              "outputs": [],
+              "side_effects": []
+            },
+            "logic": {
+              "steps": [
+                {
+                  "id": "s1",
+                  "text": "Prompt user for number of layers.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s2",
+                  "text": "For each layer, initialize neurons, thresholds, weights, and",
+                  "kind": "action"
+                },
+                {
+                  "id": "s3",
+                  "text": "Append each layer to the perceptron structure.",
+                  "kind": "action"
+                }
+              ],
+              "decisions": [],
+              "calls": [
+                {
+                  "target": "input()",
+                  "kind": "other"
+                },
+                {
+                  "target": "random.random()",
+                  "kind": "other"
+                }
+              ]
+            },
+            "risks": [],
+            "diagram_suggestion": "none"
+          },
+          {
+            "kind": "generic",
+            "id": "s3",
+            "name": "percep",
+            "range": {
+              "start_line": 32,
+              "end_line": 46
+            },
+            "signature": {
+              "parameters": [],
+              "returns": null
+            },
+            "purpose": "Calculate the output of the neural network.",
+            "io": {
+              "inputs": [],
+              "outputs": [],
+              "side_effects": []
+            },
+            "logic": {
+              "steps": [
+                {
+                  "id": "s1",
+                  "text": "Display initial outputs of the first layer.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s2",
+                  "text": "For each layer, calculate outputs based on inputs and weight",
+                  "kind": "action"
+                },
+                {
+                  "id": "s3",
+                  "text": "Display outputs for each layer.",
+                  "kind": "action"
+                }
+              ],
+              "decisions": [],
+              "calls": [
+                {
+                  "target": "math.exp()",
+                  "kind": "other"
+                },
+                {
+                  "target": "print()",
+                  "kind": "other"
+                }
+              ]
+            },
+            "risks": [],
+            "diagram_suggestion": "none"
+          },
+          {
+            "kind": "generic",
+            "id": "s4",
+            "name": "train",
+            "range": {
+              "start_line": 48,
+              "end_line": 54
+            },
+            "signature": {
+              "parameters": [],
+              "returns": null
+            },
+            "purpose": "Initiate the training process for the perceptron.",
+            "io": {
+              "inputs": [],
+              "outputs": [],
+              "side_effects": []
+            },
+            "logic": {
+              "steps": [
+                {
+                  "id": "s1",
+                  "text": "Prompt user for number of training iterations.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s2",
+                  "text": "Read training data for each iteration.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s3",
+                  "text": "Save the trained model.",
+                  "kind": "action"
+                }
+              ],
+              "decisions": [],
+              "calls": [
+                {
+                  "target": "self.readlines()",
+                  "kind": "other"
+                },
+                {
+                  "target": "self.save()",
+                  "kind": "other"
+                },
+                {
+                  "target": "input()",
+                  "kind": "other"
+                }
+              ]
+            },
+            "risks": [],
+            "diagram_suggestion": "none"
+          },
+          {
+            "kind": "generic",
+            "id": "s5",
+            "name": "readlines",
+            "range": {
+              "start_line": 56,
+              "end_line": 78
+            },
+            "signature": {
+              "parameters": [],
+              "returns": null
+            },
+            "purpose": "Read training data and perform training steps.",
+            "io": {
+              "inputs": [],
+              "outputs": [],
+              "side_effects": []
+            },
+            "logic": {
+              "steps": [
+                {
+                  "id": "s1",
+                  "text": "Open the training data file.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s2",
+                  "text": "Read lines from the file.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s3",
+                  "text": "Parse each line to extract inputs and expected outputs.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s4",
+                  "text": "Call percep() and backpropagation() for training.",
+                  "kind": "action"
+                }
+              ],
+              "decisions": [],
+              "calls": [
+                {
+                  "target": "open()",
+                  "kind": "other"
+                },
+                {
+                  "target": "self.percep()",
+                  "kind": "other"
+                },
+                {
+                  "target": "self.backpropagation()",
+                  "kind": "other"
+                }
+              ]
+            },
+            "risks": [],
+            "diagram_suggestion": "none"
+          },
+          {
+            "kind": "generic",
+            "id": "s6",
+            "name": "backpropagation",
+            "range": {
+              "start_line": 80,
+              "end_line": 116
+            },
+            "signature": {
+              "parameters": [
+                {
+                  "name": "se"
+                }
+              ],
+              "returns": null
+            },
+            "purpose": "Adjust weights based on output errors.",
+            "io": {
+              "inputs": [
+                "se: expected outputs"
+              ],
+              "outputs": [],
+              "side_effects": []
+            },
+            "logic": {
+              "steps": [
+                {
+                  "id": "s1",
+                  "text": "Calculate output layer errors.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s2",
+                  "text": "Update weights for output layer.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s3",
+                  "text": "Calculate errors for hidden layers.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s4",
+                  "text": "Update weights for hidden layers.",
                   "kind": "action"
                 }
               ],
               "decisions": [],
               "calls": []
             },
-            "risks": []
+            "risks": [],
+            "diagram_suggestion": "none"
+          },
+          {
+            "kind": "generic",
+            "id": "s7",
+            "name": "save",
+            "range": {
+              "start_line": 118,
+              "end_line": 122
+            },
+            "signature": {
+              "parameters": [],
+              "returns": null
+            },
+            "purpose": "Save the trained perceptron model to a file.",
+            "io": {
+              "inputs": [],
+              "outputs": [],
+              "side_effects": []
+            },
+            "logic": {
+              "steps": [
+                {
+                  "id": "s1",
+                  "text": "Open file for writing.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s2",
+                  "text": "Write the perceptron structure to the file.",
+                  "kind": "action"
+                },
+                {
+                  "id": "s3",
+                  "text": "Close the file.",
+                  "kind": "action"
+                }
+              ],
+              "decisions": [],
+              "calls": [
+                {
+                  "target": "open()",
+                  "kind": "other"
+                }
+              ]
+            },
+            "risks": [],
+            "diagram_suggestion": "none"
           }
         ],
         "summary": {
-          "unit_count": 1,
+          "unit_count": 7,
           "diagram_suggestion": "flowchart",
           "notes": "Gerado automaticamente pelo pipeline assíncrono."
         }
       },
       "diagrams": [
         {
-          "unit_id": "u_main",
-          "unit_name": "main",
-          "type": "flowchart",
-          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Processo principal\"]\nSTART --> s1\ns1 --> END"
+          "unit_id": "s1",
+          "unit_name": "__init__",
+          "type": "none",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Set learning rate and initialize perceptron structure.\"]\ns2[\"Change working directory and set file paths.\"]\ns3[\"Build and train the neural network.\"]\ns4[\"Continuously accept input for prediction.\"]\nSTART --> s1\ns1 --> s2\ns2 --> s3\ns3 --> s4\ns4 --> END"
+        },
+        {
+          "unit_id": "s2",
+          "unit_name": "build",
+          "type": "none",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Prompt user for number of layers.\"]\ns2[\"For each layer, initialize neurons, thresholds, weights, and\"]\ns3[\"Append each layer to the perceptron structure.\"]\nSTART --> s1\ns1 --> s2\ns2 --> s3\ns3 --> END"
+        },
+        {
+          "unit_id": "s3",
+          "unit_name": "percep",
+          "type": "none",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Display initial outputs of the first layer.\"]\ns2[\"For each layer, calculate outputs based on inputs and weight\"]\ns3[\"Display outputs for each layer.\"]\nSTART --> s1\ns1 --> s2\ns2 --> s3\ns3 --> END"
+        },
+        {
+          "unit_id": "s4",
+          "unit_name": "train",
+          "type": "none",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Prompt user for number of training iterations.\"]\ns2[\"Read training data for each iteration.\"]\ns3[\"Save the trained model.\"]\nSTART --> s1\ns1 --> s2\ns2 --> s3\ns3 --> END"
+        },
+        {
+          "unit_id": "s5",
+          "unit_name": "readlines",
+          "type": "none",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Open the training data file.\"]\ns2[\"Read lines from the file.\"]\ns3[\"Parse each line to extract inputs and expected outputs.\"]\ns4[\"Call percep() and backpropagation() for training.\"]\nSTART --> s1\ns1 --> s2\ns2 --> s3\ns3 --> s4\ns4 --> END"
+        },
+        {
+          "unit_id": "s6",
+          "unit_name": "backpropagation",
+          "type": "none",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Calculate output layer errors.\"]\ns2[\"Update weights for output layer.\"]\ns3[\"Calculate errors for hidden layers.\"]\ns4[\"Update weights for hidden layers.\"]\nSTART --> s1\ns1 --> s2\ns2 --> s3\ns3 --> s4\ns4 --> END"
+        },
+        {
+          "unit_id": "s7",
+          "unit_name": "save",
+          "type": "none",
+          "code": "flowchart TD\nSTART([\"Start\"])\nEND([\"End\"])\ns1[\"Open file for writing.\"]\ns2[\"Write the perceptron structure to the file.\"]\ns3[\"Close the file.\"]\nSTART --> s1\ns1 --> s2\ns2 --> s3\ns3 --> END"
         }
       ],
       "diagram_error": null
